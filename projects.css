@@ -1,0 +1,70 @@
+/* Project showcase: one featured lab and three system concepts. */
+#projects .proj-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 24px; }
+#projects .proj-card { min-width: 0; border-top: 1px solid var(--ink); }
+#projects .proj-head { font-size: 9px; letter-spacing: .06em; padding: 16px 0; }
+#projects .featured-project { grid-column: 1 / -1; display: grid; grid-template-columns: 1.15fr 1fr; column-gap: 48px; border-top: 2px solid var(--ink); padding-bottom: 36px; border-bottom: 1px solid var(--line); }
+#projects .featured-project .proj-head { grid-column: 1 / -1; }
+#projects .featured-project .proj-body { padding: 24px 0; justify-content: center; }
+#projects .featured-project .proj-body p { flex: none; }
+#projects .featured-project h3 { font-size: clamp(27px, 3.3vw, 43px); }
+.project-visual { overflow: hidden; min-width: 0; }
+.network-preview { background: #263c2e; color: #eff3e4; padding: 28px; background-image: radial-gradient(#ffffff1c 1px, transparent 1px); background-size: 18px 18px; }
+.preview-label, .preview-foot { font: 9px/1.6 monospace; letter-spacing: .08em; }
+.preview-label { color: #d8f36a; margin-bottom: 24px; }
+.topology-nodes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; }
+.topology-nodes > div:not(.topology-bus) { display: flex; flex-direction: column; border: 1px solid #82917a; background: #263c2e; padding: 16px; }
+.topology-nodes small { color: #d8f36a; font: 9px monospace; }
+.topology-nodes strong { font-size: clamp(20px, 2.6vw, 34px); letter-spacing: -.04em; margin: 12px 0 6px; }
+.topology-nodes span { font-size: 10px; }
+.topology-bus { grid-column: 1 / -1; text-align: center; font: 10px monospace; color: #d8f36a; padding: 16px 4px; border-inline: 1px solid #d8f36a; margin-inline: 24%; }
+.preview-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; border-top: 1px solid #ffffff30; margin-top: 24px; padding-top: 16px; }
+#projects .system-project h3 { font-size: clamp(23px, 2.2vw, 30px); }
+#projects .system-project .proj-body { padding-top: 24px; }
+#projects .system-project .proj-body p { font-size: 13px; line-height: 1.8; }
+#projects .system-project .proj-tags { margin-top: 10px; gap: 6px; }
+#projects .system-project .proj-tags span { font-size: 9px; }
+.app-preview { height: 262px; padding: 24px 20px 30px; position: relative; display: flex; align-items: center; }
+.records-project .app-preview { background: #dce3ed; --preview-accent: #344d7e; }
+.library-project .app-preview { background: #e9dfcb; --preview-accent: #6d5431; }
+.inventory-project .app-preview { background: #e0e5d8; --preview-accent: #3d563a; }
+.mini-window { width: 100%; background: #fafaf6; color: #22241f; border: 1px solid #00000028; box-shadow: 8px 10px 0 #00000009; transform: translateY(4px); transition: transform .25s ease; }
+.system-project:hover .mini-window { transform: translateY(0); }
+.mini-bar { display: flex; justify-content: space-between; gap: 8px; font: 8px/1.5 monospace; padding: 10px; color: var(--preview-accent); border-bottom: 1px solid #deded5; }
+.mini-content { padding: 14px; }
+.mini-title { font-size: 12px; font-weight: 700; margin-bottom: 12px; display: flex; justify-content: space-between; }
+.mini-title b { color: var(--preview-accent); }
+.mini-search { font-size: 8px; color: #64665f; padding: 8px; background: #edeee8; }
+.mini-row { display: flex; gap: 8px; align-items: center; font-size: 9px; border-bottom: 1px solid #deded5; padding-block: 9px; }
+.mini-row i { font: 8px monospace; color: var(--preview-accent); }
+.mini-row em { margin-left: auto; font-size: 8px; font-style: normal; color: var(--preview-accent); }
+.concept-label { position: absolute; left: 20px; bottom: 8px; font: 8px/1.4 monospace; color: #454840; text-transform: uppercase; letter-spacing: .04em; }
+.book-shelf { display: flex; gap: 8px; margin-bottom: 12px; }
+.book-shelf > div { flex: 1; min-width: 0; height: 82px; padding: 8px 5px; font: 7px monospace; background: #6d5431; color: #fff5df; display: flex; flex-direction: column; justify-content: space-between; }
+.book-shelf > div:nth-child(2) { background: #a75e42; }
+.book-shelf > div:nth-child(3) { background: #3e574c; }
+.book-shelf span { font-size: 24px; }
+.stock-summary { display: flex; gap: 8px; }
+.stock-summary > span { flex: 1; padding: 10px; background: #edeee8; font-size: 8px; }
+.stock-summary strong { display: block; font-size: 24px; letter-spacing: -.05em; margin-top: 4px; color: var(--preview-accent); }
+.stock-bars { height: 42px; display: flex; align-items: end; gap: 8px; margin-top: 12px; }
+.stock-bars span { flex: 1; height: 55%; background: #8b9b7f; }
+.stock-bars span:nth-child(2n) { height: 85%; }
+.stock-bars span:nth-child(3n) { height: 100%; background: #3d563a; }
+@media (max-width: 1000px) {
+  #projects .proj-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #projects .featured-project { column-gap: 28px; }
+  .network-preview { padding: 20px; }
+}
+@media (max-width: 700px) {
+  #projects .featured-project { grid-template-columns: minmax(0, 1fr); }
+  #projects .featured-project .proj-body { padding-bottom: 0; }
+  #projects .proj-grid { gap: 32px 20px; }
+  .app-preview { padding-inline: 12px; }
+}
+@media (max-width: 540px) {
+  #projects .proj-grid { grid-template-columns: minmax(0, 1fr); }
+  .app-preview { height: 280px; padding-inline: 28px; }
+  .topology-nodes { column-gap: 12px; }
+  .topology-nodes > div:not(.topology-bus) { padding: 12px; }
+}
+@media (prefers-reduced-motion: reduce) { .mini-window { transition: none; transform: none; } .system-project:hover .mini-window { transform: none; } }
